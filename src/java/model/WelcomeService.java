@@ -14,17 +14,19 @@ import java.time.LocalTime;
  */
 public class WelcomeService {
     
-    private static LocalTime now = LocalTime.now();
+    private static LocalTime now;
     
     private static String CheckTime(){
+        now = LocalTime.now();
         if (now.isBefore(LocalTime.NOON)){
             return "Morning";
         }
         else if(now.isBefore(LocalTime.of(17, 0))){
             return "Afternoon";
         }
-        else
+        else{
             return "Evening";
+        }
     }
     
     public static String Message(String name){
